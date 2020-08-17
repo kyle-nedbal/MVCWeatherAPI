@@ -1,0 +1,54 @@
+﻿@model Weather
+@{
+    ViewData["Title"] = "Weather";
+}
+<style>
+    caption {
+        display: table-caption;
+        text-align: center;
+        caption-side: top;
+    }
+</style>
+<style>
+    img {
+        width: 200px;
+        height: 200px;
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+    }
+</style>
+
+<h1>Weather</h1>
+
+<table class="table table-striped">
+    <caption><h4>Forecast for Huntingburg, IN</h4></caption>
+    <tbody>
+        <tr>
+            <th scope="row">Temperature</th>
+            <td>@Model.Currentobservation.Temp</td>
+        </tr>
+        <tr>
+            <th scope="row">Dewpoint</th>
+            <td>@Model.Currentobservation.Dewp</td>
+        </tr>
+        <tr>
+            <th scope="row">Windchill</th>
+            <td>@Model.Currentobservation.WindChill</td>
+        </tr>
+        <tr>
+            <th scope="row">Windspeed</th>
+            <td>@Model.Currentobservation.Winds</td>
+        </tr>
+        <tr>
+            <th scope="row">Gust</th>
+            <td>@Model.Currentobservation.Gust</td>
+        </tr>
+        <tr>
+            <th scope="row">Visibility</th>
+            <td>@Model.Currentobservation.Visibility</td>
+        </tr>
+    </tbody>
+</table>
+
+<img src="@Model.Currentobservation.Weatherimage"/>
